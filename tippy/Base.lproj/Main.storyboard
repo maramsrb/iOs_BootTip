@@ -88,7 +88,13 @@
                             <outletCollection property="gestureRecognizers" destination="FL4-OU-TgB" appends="YES" id="jPc-nG-cAQ"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tip Calculator" id="5XX-R4-7tv"/>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="5XX-R4-7tv" userLabel="Settings">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="PIv-R0-U2U">
+                            <connections>
+                                <segue destination="75C-Ho-eEF" kind="push" id="8Be-xv-GiC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Percentlabel" destination="xCq-0x-Fwe" id="rdR-lc-5Nf"/>
                         <outlet property="TotalLabel" destination="av5-gV-ao6" id="la5-OJ-NiQ"/>
@@ -105,6 +111,48 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="536.5" y="117.5"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="xVa-3o-lya">
+            <objects>
+                <viewController id="75C-Ho-eEF" customClass="SettingsViewController" customModule="tippy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qx3-A8-81C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="15" maxValue="25" id="tO9-kf-qIs">
+                                <rect key="frame" x="66" y="381" width="263" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="ValueChanged:" destination="75C-Ho-eEF" eventType="valueChanged" id="18N-Pg-WaC"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6TT-Ax-CBe">
+                                <rect key="frame" x="84" y="302" width="226" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Default Tip:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mS2-eg-mkE">
+                                <rect key="frame" x="144" y="144" width="106" height="127"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eTG-lG-84r"/>
+                    <connections>
+                        <outlet property="tipLabel" destination="6TT-Ax-CBe" id="Gdz-pT-zZT"/>
+                        <outlet property="tipSlider" destination="tO9-kf-qIs" id="XbX-Q2-4GO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sM1-zW-6MB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="971.5" y="117.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kMI-Dj-NfK">

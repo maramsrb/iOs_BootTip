@@ -26,6 +26,18 @@ class ViewController: UIViewController {
         calculateTip(sender)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear")
+        
+        let defaults = UserDefaults.standard
+        let storedValue = defaults.object(forKey: "tipDefault")
+        if(storedValue != nil){
+            let defaultTipValue = storedValue as! Float
+            tipSlider.setValue(defaultTipValue, animated: false)
+            Percentlabel.text = String(format: "%.2f%%",defaultTipValue)
+        }
+    }
     
     //end slider
     override func viewDidLoad() {
